@@ -18,13 +18,12 @@ const Reservation = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/reservation/send",
+        "https://restaurant-backend-gvj5.onrender.com/reservation/send",
         { firstName, lastName, email, phone, date, time },
         {
           headers: {
             "Content-Type": "application/json",
-          },
-          withCredentials: true,
+          }
         }
       );
       toast.success(data.message);
